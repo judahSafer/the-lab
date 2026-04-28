@@ -18,17 +18,16 @@
 
     .full-logo {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      gap: 0;
+      gap: 8px;
     }
 
     /* Wordmark */
     .wordmark {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-bottom: 5px;
+      align-items: flex-start;
     }
 
     .w-safer {
@@ -72,8 +71,8 @@
     /* Shield + orb */
     .logo-wrap {
       position: relative;
-      width: 220px;
-      height: 220px;
+      width: 160px;
+      height: 160px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -81,8 +80,8 @@
 
     .shield-static {
       position: absolute;
-      width: 210px;
-      height: 210px;
+      width: 150px;
+      height: 150px;
       animation: shield-breathe 3s ease-in-out infinite;
     }
 
@@ -93,8 +92,8 @@
 
     .orb-inner {
       position: absolute;
-      width: 155px;
-      height: 155px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       animation: orb-breathe 3s ease-in-out infinite;
       mix-blend-mode: screen;
@@ -110,15 +109,15 @@
 
   <div class="full-logo">
 
-    <div class="wordmark">
-      <div class="w-safer">SAFER</div>
-      <div class="accent-line"></div>
-      <div class="w-global">GLOBAL</div>
-    </div>
-
     <div class="logo-wrap">
       <img class="shield-static" src="logo-concept.svg" alt="shield"/>
       <img class="orb-inner" src="orb-transparent.png" alt="orb"/>
+    </div>
+
+    <div class="wordmark">
+      <div class="w-safer">SAFER</div>
+      <div class="accent-line"></div>
+      <div class="w-global">.GLOBAL</div>
     </div>
 
   </div>
