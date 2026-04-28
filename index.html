@@ -4,6 +4,8 @@
   <meta charset="UTF-8"/>
   <title>Safer.Global — The Lab</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;900&display=swap');
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: #000010;
@@ -16,6 +18,101 @@
       gap: 32px;
       padding: 48px 24px;
     }
+
+    /* ── Top right logo ── */
+    .corner-logo {
+      position: fixed;
+      top: 24px;
+      left: 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    .corner-logo-wrap {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .corner-shield {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      animation: shield-breathe 3s ease-in-out infinite;
+    }
+
+    .corner-orb {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      mix-blend-mode: screen;
+      animation: orb-breathe 3s ease-in-out infinite;
+    }
+
+    .corner-wordmark {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .corner-safer {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0,212,255,0.6);
+      line-height: 1;
+      animation: breathe 4s ease-in-out infinite;
+    }
+
+    .corner-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(0,212,255,0.35), transparent);
+      margin: 3px 0;
+    }
+
+    .corner-global {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.45rem;
+      font-weight: 300;
+      letter-spacing: 4px;
+      color: #00d4ff;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(0,212,255,0.6);
+      animation: fade-breathe 4s ease-in-out infinite;
+    }
+
+    @keyframes shield-breathe {
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(0,212,255,0.4)) drop-shadow(0 0 14px rgba(0,212,255,0.2)); }
+      50%       { filter: drop-shadow(0 0 12px rgba(0,212,255,0.8)) drop-shadow(0 0 24px rgba(0,212,255,0.4)); }
+    }
+
+    @keyframes orb-breathe {
+      0%, 100% { opacity: 0.85; transform: scale(0.97); }
+      50%       { opacity: 1;    transform: scale(1.03); }
+    }
+
+    @keyframes breathe {
+      0%, 100% { text-shadow: 0 0 10px rgba(0,212,255,0.5); }
+      50%       { text-shadow: 0 0 18px rgba(0,212,255,0.9); }
+    }
+
+    @keyframes fade-breathe {
+      0%, 100% { opacity: 0.7; }
+      50%       { opacity: 1; }
+    }
+
+    /* ── Index content ── */
     h1 { color: #00d4ff; font-size: 1rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
     p.sub { color: #8888aa; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
     .divider { width: 120px; height: 1px; background: rgba(0,212,255,0.2); }
@@ -32,20 +129,31 @@
       transition: border-color 0.2s, background 0.2s;
     }
     a.item:hover { border-color: rgba(0,212,255,0.6); background: rgba(0,212,255,0.05); }
-    a.item span { display: block; color: #8888aa; font-size: 0.65rem; letter-spacing: 1px; margin-top: 4px; }
   </style>
 </head>
 <body>
+
+  <!-- Top right logo -->
+  <div class="corner-logo">
+    <div class="corner-logo-wrap">
+      <img class="corner-shield" src="logo-concept.svg" alt="shield"/>
+      <img class="corner-orb" src="orb-transparent.png" alt="orb"/>
+    </div>
+    <div class="corner-wordmark">
+      <div class="corner-safer">SAFER</div>
+      <div class="corner-line"></div>
+      <div class="corner-global">.GLOBAL</div>
+    </div>
+  </div>
+
+  <!-- Main content -->
   <h1>The Lab</h1>
   <p class="sub">Safer.Global · Design Previews</p>
   <div class="divider"></div>
   <div class="item-list">
-    <a class="item" href="logo-option1-preview.html">
-      Logo Clean
-    </a>
-    <a class="item" href="logo-combined-final-preview.html">
-      Logo + Name
-    </a>
+    <a class="item" href="logo-option1-preview.html">Logo Clean</a>
+    <a class="item" href="logo-combined-final-preview.html">Logo + Name</a>
   </div>
+
 </body>
 </html>
